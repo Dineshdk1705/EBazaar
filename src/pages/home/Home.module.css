@@ -1,0 +1,98 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+}
+
+.heroText {
+  max-width: 500px;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.heroButton {
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: white;
+  background-color: #4a99e8;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.heroButton:hover {
+  background-color: #408bd6;
+}
+
+.heroImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroButton {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .heroImage img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .heroButton {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+
+  .heroImage img {
+    max-width: 100%;
+  }
+}
