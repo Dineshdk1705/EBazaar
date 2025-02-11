@@ -171,9 +171,9 @@ const Products = () => {
               onChange={handleChange}
               size={paginationSize}
               sx={{
-                "& .Mui-selected": {
-                  backgroundColor: "var(--secondary-bg)",
-                  color: "#fff",
+                "& .MuiPaginationItem-root.Mui-selected": {
+                  backgroundColor: "var(--secondary-bg) !important",
+                  color: "#fff !important",
                 },
               }}
             />
