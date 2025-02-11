@@ -99,7 +99,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div>
+    <>
       {isLoading ? (
         <ProductDetailsLoading />
       ) : (
@@ -195,7 +195,7 @@ const ProductDetails = () => {
 
                   <Typography
                     variant="h6"
-                    sx={{ color: "#4a99e8", fontWeight: "bold" }}
+                    sx={{ color: "#39ad58", fontWeight: "bold" }}
                   >
                     {product?.quantity || customQuantity}
                   </Typography>
@@ -215,7 +215,7 @@ const ProductDetails = () => {
                   sx={{ fontWeight: 500, color: "#8d8d8d" }}
                 >
                   Only{" "}
-                  <span style={{ color: "#4a99e8" }}>
+                  <span style={{ color: "var(--primary-bg)" }}>
                     {product?.stock - customQuantity < 0
                       ? "item"
                       : `${product?.stock - customQuantity} items `}
@@ -243,9 +243,11 @@ const ProductDetails = () => {
                   className={styles.cart_button}
                   style={{
                     borderColor: !cartIdInCart(Number(id))
-                      ? "#4a99e8"
+                      ? "var(--secondary-bg)"
                       : "#8d8d8d",
-                    color: !cartIdInCart(Number(id)) ? "#4a99e8" : "#8d8d8d",
+                    color: !cartIdInCart(Number(id))
+                      ? "var(--secondary-bg)"
+                      : "#8d8d8d",
                   }}
                   onClick={() =>
                     !cartIdInCart(Number(id))
@@ -274,7 +276,7 @@ const ProductDetails = () => {
               </Typography>
 
               <div className={styles.delivery_box}>
-                <BiHome size={25} color="#4a99e8" />
+                <BiHome size={25} color="var(--secondary-bg)" />
                 <div>
                   <Typography variant="body2" sx={{ fontWeight: 600 }}>
                     Free delivery
@@ -295,7 +297,7 @@ const ProductDetails = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

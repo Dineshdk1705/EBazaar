@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ContactUs.module.css";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { Button, CircularProgress, Typography } from "@mui/material";
@@ -11,6 +11,10 @@ const ContactUs = () => {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    window.scroll({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -88,8 +92,10 @@ const ContactUs = () => {
                 color={loading ? "secondary" : "primary"}
                 disabled={loading}
                 sx={{
-                  backgroundColor: loading ? "#aaa" : "#4a99e8",
-                  "&:hover": { backgroundColor: loading ? "#aaa" : "#3a87d8" },
+                  backgroundColor: loading ? "#aaa" : "var(--secondary-bg)",
+                  "&:hover": {
+                    backgroundColor: loading ? "#aaa" : "var(--hover-bg)",
+                  },
                   display: "flex",
                   alignItems: "center",
                   gap: "10px",

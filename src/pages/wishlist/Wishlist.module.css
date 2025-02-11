@@ -35,14 +35,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
   margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
 }
 
 .emptyWishlistImage img {
-  /* width: 100vw; */
-  text-align: center;
+  width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 .thumbnail {
@@ -83,15 +84,12 @@
   }
 
   .emptyWishlistImage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+    flex-direction: column;
+    max-width: 400px;
   }
 
   .emptyWishlistImage img {
-    text-align: center;
-    height: 200px;
-    width: 100vw;
+    max-width: 400px;
+    height: auto;
   }
 }

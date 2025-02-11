@@ -20,6 +20,7 @@ const ProductDetailsLoading = () => {
         <Skeleton className={styles.title} />
         <Skeleton className={styles.price} />
         <Skeleton className={styles.stock} />
+        <Skeleton className={styles.quantity} />
         <Skeleton className={styles.warranty} />
         <Skeleton className={styles.quantity} />
         <div className={styles.buttonContainer}>

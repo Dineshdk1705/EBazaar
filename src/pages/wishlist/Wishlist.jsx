@@ -12,20 +12,22 @@ const Wishlist = () => {
   const dispatch = useDispatch();
   return (
     <div className={styles.main_container}>
-      <Typography
-        sx={{
-          fontSize: {
-            xs: 30,
-            sm: 40,
-            md: 50,
-          },
-          fontWeight: 1000,
-          textAlign: "center",
-        }}
-        variant="h6"
-      >
-        Wishlist {wishlist?.length > 0 ? "" : "is Empty"}
-      </Typography>
+      {wishlist?.length > 0 && (
+        <Typography
+          sx={{
+            fontSize: {
+              xs: 30,
+              sm: 40,
+              md: 50,
+            },
+            fontWeight: 1000,
+            textAlign: "center",
+          }}
+          variant="h6"
+        >
+          Wishlist
+        </Typography>
+      )}
       {wishlist?.length > 0 ? (
         <ul className={styles.card_container}>
           {wishlist.map((w) => (
@@ -79,7 +81,7 @@ const Wishlist = () => {
                   </Typography>
                   <Typography
                     variant="body2"
-                    sx={{ color: "#4a99e8", fontWeight: 500 }}
+                    sx={{ color: "var(--secondary-bg)", fontWeight: 500 }}
                   >
                     {w.stock} in stock
                   </Typography>
@@ -103,7 +105,21 @@ const Wishlist = () => {
         </ul>
       ) : (
         <div className={styles.emptyWishlistImage}>
-          <img src="/images/empty-wishlist.webp" alt="empty-wishlist" />
+          <img src="/images/empty-wishlist.jpg" alt="empty-wishlist" />
+          <Typography
+            sx={{
+              fontSize: {
+                xs: 20,
+                sm: 30,
+                md: 40,
+              },
+              fontWeight: 1000,
+              textAlign: "center",
+            }}
+            variant="h6"
+          >
+            {"Wishlist is Empty :("}
+          </Typography>
         </div>
       )}
     </div>

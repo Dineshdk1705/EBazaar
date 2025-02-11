@@ -1,0 +1,45 @@
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+.skeletonWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skeleton {
+  width: 150px;
+  height: 45px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f5f5f5;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
+@media (max-width: 768px) {
+  .skeleton {
+    width: 100px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeleton {
+    width: 80px;
+    height: 30px;
+  }
+}

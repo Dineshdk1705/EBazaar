@@ -1,6 +1,9 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   text-align: center;
-  /* padding: 20px; */
+  min-height: 95vh;
 }
 
 .heading {
@@ -13,6 +16,7 @@
   list-style: none;
   padding: 0;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
@@ -28,12 +32,18 @@
 }
 
 .categoryItem:hover {
-  background-color: #e0e0e0;
+  background-color: #e3fff1;
   transform: scale(1.05);
 }
 
 .categoryItem.active {
-  background-color: #4a99e8;
+  background-color: var(--secondary-bg);
   color: white;
   font-weight: bold;
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+  .container {
+    gap: 0;
+  }
 }

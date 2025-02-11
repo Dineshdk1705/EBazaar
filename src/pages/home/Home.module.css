@@ -2,8 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  min-height: 95vh;
+}
+
+.logo_img {
+  width: 100%;
 }
 
 .heroContent {
@@ -36,7 +39,7 @@
   padding: 15px 30px;
   font-size: 1rem;
   color: white;
-  background-color: #4a99e8;
+  background-color: var(--secondary-bg);
   font-weight: 600;
   border: none;
   border-radius: 5px;
@@ -45,7 +48,7 @@
 }
 
 .heroButton:hover {
-  background-color: #408bd6;
+  background-color: var(--hover-bg);
 }
 
 .heroImage img {
@@ -53,7 +56,6 @@
   height: auto;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .heroContent {
     flex-direction: column;

@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const storedUser = localStorage.getItem("user");
 
@@ -76,6 +77,7 @@ export const loginWithGoogle = createAsyncThunk(
         photoURL: user?.photoURL,
       };
       localStorage.setItem("user", JSON.stringify(userData));
+      toast.success("Login Successfully");
       return userCredential.user;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -105,8 +107,16 @@ const authSlice = createSlice({
         state.error = action.payload;
         state.loading = false;
       })
+      .addCase(registerWithEmail.pending, (state) => {
+        state.loading = true;
+      })
       .addCase(registerWithEmail.fulfilled, (state, action) => {
         state.user = action.payload;
+        state.loading = false;
+      })
+      .addCase(registerWithEmail.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
       })
       .addCase(loginWithGoogle.fulfilled, (state, action) => {
         state.user = action.payload;

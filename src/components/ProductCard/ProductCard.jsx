@@ -62,7 +62,7 @@ const ProductCard = ({ product, inCart, inWishlist, ratingValue }) => {
           <Typography
             variant="body2"
             sx={{
-              color: "#4a99e8",
+              color: "var(--secondary-bg)",
               fontWeight: 1000,
               fontSize: 18,
             }}
@@ -83,7 +83,7 @@ const ProductCard = ({ product, inCart, inWishlist, ratingValue }) => {
             </Typography>
             <Typography
               variant="body2"
-              sx={{ color: "#00C23D", fontWeight: 500, fontSize: "13px" }}
+              sx={{ color: "#FF5959", fontWeight: 500, fontSize: "13px" }}
             >
               {Math.round(discountPercentage)}% off
             </Typography>
@@ -124,7 +124,7 @@ const ProductCard = ({ product, inCart, inWishlist, ratingValue }) => {
           sx={{
             borderRadius: 3,
             boxShadow: "none",
-            backgroundColor: "#4a99e8",
+            backgroundColor: "var(--secondary-bg)",
           }}
           onClick={() => {
             dispatch(

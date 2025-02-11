@@ -111,7 +111,6 @@ const Products = () => {
                 marginBottom: {
                   xs: 1,
                   sm: 1,
-                  // md: 0,
                 },
               }}
               onClick={() => {
@@ -170,11 +169,10 @@ const Products = () => {
               count={Math.ceil(productList?.length / itemsPerPage)}
               page={currentPage}
               onChange={handleChange}
-              color="primary"
               size={paginationSize}
               sx={{
                 "& .Mui-selected": {
-                  backgroundColor: "#ff6338",
+                  backgroundColor: "#2d9248",
                   color: "#fff",
                 },
               }}

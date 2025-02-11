@@ -10,12 +10,12 @@ import ProductDetails from "./pages/productDetails/ProductDetails";
 import Cart from "./pages/cart/Cart";
 import Products from "./pages/products/Products";
 import Wishlist from "./pages/wishlist/Wishlist";
-import OnBoarding from "./components/custom/OnBoarding/OnBoarding";
-import ProtectedRoute from "./components/ProtectedRoute"; // Import Protected Route
 import Categories from "./pages/categories/Categories";
 import ContactUs from "./pages/contactUs/ContactUs";
 import PaymentPage from "./components/custom/PaymentPage/PaymentPage";
 import ThankYouPage from "./components/custom/ThankyouPage/ThankyouPage";
+import OnBoarding from "./pages/OnBoarding/OnBoarding";
+import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
   return (

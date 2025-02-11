@@ -1,10 +1,5 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {
-  decreaseQuantity,
-  increaseQuantity,
-  removeFromCart,
-} from "../../../redux/slices/cartSlice";
 import { MdDeleteOutline } from "react-icons/md";
 import {
   Card,
@@ -19,6 +14,11 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../../redux/slices/cartSlice";
 
 const CartCard = ({ id, thumbnail, title, price, quantity, stock }) => {
   const dispatch = useDispatch();
@@ -55,6 +55,10 @@ const CartCard = ({ id, thumbnail, title, price, quantity, stock }) => {
       <Box sx={{ display: "flex", alignItems: "center", mx: 2 }}>
         <Button
           variant="outlined"
+          sx={{
+            color: "var(--secondary-bg)",
+            borderColor: "var(--secondary-bg)",
+          }}
           size="small"
           onClick={() =>
             quantity > 1
@@ -67,6 +71,10 @@ const CartCard = ({ id, thumbnail, title, price, quantity, stock }) => {
         <Typography sx={{ mx: 2 }}>{quantity}</Typography>
         <Button
           variant="outlined"
+          sx={{
+            color: "var(--secondary-bg)",
+            borderColor: "var(--secondary-bg)",
+          }}
           size="small"
           onClick={() => stock > quantity && dispatch(increaseQuantity(id))}
         >

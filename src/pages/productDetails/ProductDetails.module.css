@@ -88,8 +88,8 @@
 .buy_button {
   padding: 15px;
   color: white;
-  background-color: #4a99e8;
-  border: 2px solid #4a99e8;
+  background-color: var(--secondary-bg);
+  border: 2px solid var(--secondary-bg);
   border-radius: 50px;
   min-width: 160px;
   font-size: 15px;
@@ -97,15 +97,15 @@
 }
 
 .buy_button:hover {
-  background-color: #468fd8;
-  border: 1px solid #4a99e8;
+  background-color: var(--hover-bg);
+  border: 1px solid var(--hover-bg);
 }
 
 .cart_button {
   padding: 15px;
-  color: #4a99e8;
+  color: var(--secondary-bg);
   background-color: white;
-  border: 2px solid #4a99e8;
+  border: 2px solid var(--secondary-bg);
   border-radius: 50px;
   min-width: 160px;
   font-size: 15px;

@@ -8,6 +8,7 @@ import {
 } from "../../redux/slices/productSlice";
 import styles from "./Categories.module.css";
 import { Typography } from "@mui/material";
+import CategoriesLoading from "../../components/custom/loadings/CategoriesLoading/CategoriesLoading";
 
 const Categories = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Categories = () => {
 
   useEffect(() => {
     dispatch(fetchCategories());
+    window.scroll({ top: 0, behavior: "smooth" });
   }, [dispatch]);
 
   const handleCategorySelect = (category) => {
@@ -25,8 +27,6 @@ const Categories = () => {
     dispatch(fetchProductsByCategory(category?.slug));
     navigate("/products");
   };
-
-  if (loading) return <p>Loading categories...</p>;
 
   return (
     <div className={styles.container}>
@@ -45,17 +45,22 @@ const Categories = () => {
         Categories
       </Typography>
       <ul className={styles.categoryList}>
-        {categories?.map((category) => (
-          <li
-            key={category?.slug}
-            onClick={() => handleCategorySelect(category)}
-            className={`${styles.categoryItem} ${
-              selectedCategory?.slug === category?.slug ? styles.active : ""
-            }`}
-          >
-            {category?.name}
-          </li>
-        ))}
+        {loading ? (
+          <CategoriesLoading />
+        ) : (
+          categories?.length > 0 &&
+          categories?.map((category) => (
+            <li
+              key={category?.slug}
+              onClick={() => handleCategorySelect(category)}
+              className={`${styles.categoryItem} ${
+                selectedCategory?.slug === category?.slug ? styles.active : ""
+              }`}
+            >
+              {category?.name}
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );

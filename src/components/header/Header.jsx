@@ -120,35 +120,34 @@ const Header = () => {
         </Link>
         <Link className={styles.account_link}>
           {user ? (
-            <IconButton
+            <div
               ref={userRef}
               onMouseOver={() => setLoginVisible(true)}
-              sx={{
-                padding: 0,
-                cursor: "default",
-              }}
+              className={styles.avatar_box}
             >
               <Avatar
-                sx={{ width: 28, height: 28, border: "1px solid white" }}
+                sx={{ width: 27, height: 27, border: "1px solid white" }}
                 alt="User Avatar"
-                src={user?.photoURL || "/images/user.png"}
+                src={user?.photoURL || "/images/user.jpg"}
               />
               <Button
+                color="secondary"
                 sx={{
+                  width: "100px",
                   position: "absolute",
                   display: loginVisible ? "block" : "none",
-                  bottom: -30,
+                  bottom: -20,
+                  right: "10px",
                   color: "#fff",
-                  backgroundColor: "#000",
+                  backgroundColor: "#222",
                   alignItems: "center",
-                  width: "100%",
-                  padding: "0 8px",
+                  padding: "3px 8px",
                   textTransform: "capitalize",
                   fontWeight: 400,
-                  borderRadius: 0,
+                  borderRadius: 3,
                   transition: "all 0.3s ease-in-out",
                   "&:hover": {
-                    backgroundColor: "#222",
+                    backgroundColor: "#444",
                     transform: "scale(1.05)",
                   },
                 }}
@@ -161,7 +160,7 @@ const Header = () => {
               >
                 Logout
               </Button>
-            </IconButton>
+            </div>
           ) : (
             <IconButton onClick={() => navigate("/onboarding")}>
               <AccountCircleIcon />

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./Cart.module.css";
-import CartCard from "../../components/custom/CartCard/CartCard";
+
 import { Button, CircularProgress, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { setTotalAmount } from "../../redux/slices/cartSlice";
 import { setCheckoutAllowed } from "../../redux/slices/checkoutSlice";
+import CartCard from "../../components/CartCard/CartCard";
 
 const Cart = () => {
   const [promoCode, setPromoCode] = useState("");
@@ -50,20 +51,22 @@ const Cart = () => {
 
   return (
     <div className={styles.container}>
-      <Typography
-        sx={{
-          fontSize: {
-            xs: 30,
-            sm: 40,
-            md: 50,
-          },
-          fontWeight: 1000,
-          textAlign: "center",
-        }}
-        variant="h6"
-      >
-        Cart {cart.length > 0 ? "" : "is Empty"}
-      </Typography>
+      {cart?.length > 0 && (
+        <Typography
+          sx={{
+            fontSize: {
+              xs: 30,
+              sm: 40,
+              md: 50,
+            },
+            fontWeight: 1000,
+            textAlign: "center",
+          }}
+          variant="h6"
+        >
+          Cart
+        </Typography>
+      )}
       <div className={styles.cartWrapper}>
         <div className={cart.length > 0 ? styles.cartItems : styles.emptyCart}>
           <Typography variant="body2">
@@ -85,7 +88,21 @@ const Cart = () => {
             </ul>
           ) : (
             <div className={styles.emptyCartImage}>
-              <img src="/images/empty-cart.webp" alt="empty-cart" />
+              <img src="/images/empty-cart.png" alt="empty-cart" />
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: 20,
+                    sm: 30,
+                    md: 40,
+                  },
+                  fontWeight: 1000,
+                  textAlign: "center",
+                }}
+                variant="h6"
+              >
+                {"Cart is Empty :("}
+              </Typography>
             </div>
           )}
         </div>

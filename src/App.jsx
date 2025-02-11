@@ -1,10 +1,10 @@
 import "./App.css";
-import AppRoutes from "./routes";
 import "@fontsource/roboto";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Toaster } from "react-hot-toast";
 import "react-loading-skeleton/dist/skeleton.css";
+import AppRoutes from "./routes";
 
 const theme = createTheme({
   typography: {

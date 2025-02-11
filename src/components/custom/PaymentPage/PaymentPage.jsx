@@ -15,7 +15,7 @@ const PaymentPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const upiName = "EBazaar Payment";
+  const upiName = "Dinesh";
   const paymentLink = `upi://pay?pa=${process.env.REACT_APP_UPI_ID}&pn=${upiName}&am=${totalAmount}&cu=INR&tn=EBazaar%20Order`;
 
   useEffect(() => {
@@ -80,8 +80,10 @@ const PaymentPage = () => {
           color={loading ? "secondary" : "primary"}
           disabled={loading}
           sx={{
-            backgroundColor: loading ? "#aaa" : "#4a99e8",
-            "&:hover": { backgroundColor: loading ? "#aaa" : "#3a87d8" },
+            backgroundColor: loading ? "#aaa" : "var(--secondary-bg)",
+            "&:hover": {
+              backgroundColor: loading ? "#aaa" : "var(--hover-bg)",
+            },
             display: "flex",
             alignItems: "center",
             gap: "10px",
