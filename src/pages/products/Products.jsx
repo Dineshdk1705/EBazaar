@@ -172,7 +172,7 @@ const Products = () => {
               size={paginationSize}
               sx={{
                 "& .Mui-selected": {
-                  backgroundColor: "#2d9248",
+                  backgroundColor: "var(--secondary-bg)",
                   color: "#fff",
                 },
               }}
